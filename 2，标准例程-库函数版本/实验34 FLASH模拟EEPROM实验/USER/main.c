@@ -41,14 +41,14 @@ int main(void)
 	while(1)
 	{
 		key=KEY_Scan(0);
-		if(key==KEY1_PRES)	//KEY1按下,写入STM32 FLASH
+		if(key == KEY1_PRES)	//KEY1按下,写入STM32 FLASH
 		{
 			LCD_Fill(0,170,239,319,WHITE);//清除半屏    
  			LCD_ShowString(30,170,200,16,16,"Start Write FLASH....");
 			STMFLASH_Write(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
 			LCD_ShowString(30,170,200,16,16,"FLASH Write Finished!");//提示传送完成
 		}
-		if(key==KEY0_PRES)	//KEY0按下,读取字符串并显示
+		if(key == KEY0_PRES)	//KEY0按下,读取字符串并显示
 		{
  			LCD_ShowString(30,170,200,16,16,"Start Read FLASH.... ");
 			STMFLASH_Read(FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
@@ -57,10 +57,10 @@ int main(void)
 		}
 		i++;
 		delay_ms(10);  
-		if(i==20)
+		if(i == 20)
 		{
-			LED0=!LED0;//提示系统正在运行	
-			i=0;
+			LED0 = !LED0;//提示系统正在运行	
+			i = 0;
 		}		   
 	}    
 }

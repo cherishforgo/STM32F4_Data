@@ -38,7 +38,7 @@ void W25QXX_Init(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
   GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;//PG7
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;//PG7
   GPIO_Init(GPIOG, &GPIO_InitStructure);//初始化
  
 	GPIO_SetBits(GPIOG,GPIO_Pin_7);//PG7输出1,防止NRF干扰SPI FLASH的通信 
